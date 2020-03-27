@@ -7,7 +7,7 @@ const Button = ({text, handleClick}) => (
 	</button>
 )
 
-const DisplayStat = ({stat, statValue}) => (
+const Statistic = ({stat, statValue}) => (
 	<p>{stat} {statValue}</p>
 )
 
@@ -27,12 +27,12 @@ const App = () => {
 			<Button text={'neutral'} handleClick={() => setNeutral(neutral + 1)} />
 			<Button text={'bad'} handleClick={() => setBad(bad + 1)} />
 			<h1>Statistics</h1>
-			<DisplayStat stat={'good'} statValue={good} />
-			<DisplayStat stat={'neutral'} statValue={neutral} />
-			<DisplayStat stat={'bad'} statValue={bad} />
-			<DisplayStat stat={'all'} statValue={all} />
-			<DisplayStat stat={'average'} statValue={average} />
-			<DisplayStat stat={'positive'} statValue={positive} />
+			<Statistic stat={'good'} statValue={good} />
+			<Statistic stat={'neutral'} statValue={neutral} />
+			<Statistic stat={'bad'} statValue={bad} />
+			<Statistic stat={'all'} statValue={all} />
+			<Statistic stat={'average'} statValue={average} />
+			<Statistic stat={'positive'} statValue={positive} />
 		</div>
 	)
 }
