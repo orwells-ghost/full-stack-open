@@ -1,6 +1,26 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
+const DisplayBest = ({points}) => {
+	const max = Object.keys(points).reduce((a, b) => points[a] > points[b] ? a : b)
+
+	if (points[max] === 0) {
+		return (
+			<div>
+				No anecdotes have received votes yet
+			</div>
+		)
+	}
+	else {
+		return (
+			<div>
+				<p>{anecdotes[max]}</p>
+			</div>
+		)
+	}
+
+}
+
 const Button = ({text, handleClick}) => (
 	<button onClick={handleClick}>
 		{text}
@@ -26,14 +46,16 @@ const App = (props) => {
 			[selected]: points[selected] + 1
 		})
 	}
-	console.log(points)
 
 	return (
 		<div>
+			<h1>Anecdote of the Day</h1>
 			{props.anecdotes[selected]}
 			<br />
 			<Button text="Vote" handleClick={handleVoteClick} />
 			<Button text="Next Random Anecdote" handleClick={handleAnecdotesClick} />
+			<h1>Anecdote with Most Votes</h1>
+			<DisplayBest points={points} />
 		</div>
 	)
 }
