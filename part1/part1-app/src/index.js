@@ -13,7 +13,7 @@ const App = props => {
 	const [value, setValue] = useState(10)
 
 	const setToValue = newValue => {
-	setValue(newValue)
+		setValue(newValue)
 	}
 
 	return (
