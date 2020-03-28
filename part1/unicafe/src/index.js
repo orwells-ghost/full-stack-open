@@ -7,8 +7,11 @@ const Button = ({text, handleClick}) => (
 	</button>
 )
 
-const Statistic = ({stat, statValue}) => (
-	<p>{stat} {statValue}</p>
+const Statistic = ({text, statValue}) => (
+	<tr>
+		<td>{text}</td>
+		<td>{statValue}</td>
+	</tr>
 )
 
 const DisplayStatistics = ({good, neutral, bad}) => {
@@ -20,16 +23,19 @@ const DisplayStatistics = ({good, neutral, bad}) => {
 		return (
 			<div>No Feedback Given</div>
 		)
-	} else {
+	}
+	else {
 		return (
-			<div>
-				<Statistic stat={'good'} statValue={good} />
-				<Statistic stat={'neutral'} statValue={neutral} />
-				<Statistic stat={'bad'} statValue={bad} />
-				<Statistic stat={'all'} statValue={all} />
-				<Statistic stat={'average'} statValue={average} />
-				<Statistic stat={'positive'} statValue={positive} />
-			</div>
+			<table>
+				<tbody>
+					<Statistic text={'good'} statValue={good} />
+					<Statistic text={'neutral'} statValue={neutral} />
+					<Statistic text={'bad'} statValue={bad} />
+					<Statistic text={'all'} statValue={all} />
+					<Statistic text={'average'} statValue={average} />
+					<Statistic text={'positive'} statValue={positive} />
+				</tbody>
+			</table>
 		)
 	}
 }
