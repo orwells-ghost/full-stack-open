@@ -18,7 +18,6 @@ const DisplayBest = ({points}) => {
 			</div>
 		)
 	}
-
 }
 
 const Button = ({text, handleClick}) => (
